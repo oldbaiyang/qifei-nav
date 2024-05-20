@@ -14,7 +14,7 @@
 
 
 - taxonomy: 自媒体收藏
-  icon: fas fa-flim fa-lg
+  # icon: fas fa-flask fa-lg
   list:
     - term: youtub
       links:
