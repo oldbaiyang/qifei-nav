@@ -47,9 +47,9 @@
           logo: 马神之路.avif
           url: https://space.bilibili.com/473844125/?spm_id_from=333.999.0.0
           description: go语言技术博主
-    - term: 公众号
+    - term: 博客
       links:
-        - title: 马神之路
-          logo: 马神之路.avif
-          url: https://space.bilibili.com/473844125/?spm_id_from=333.999.0.0
+        - title: 棋飞
+          logo: https://qifei-blog-1256009448.cos.ap-chengdu.myqcloud.com/qifei-blog/logo.png 
+          url: https://qifeiai.top/
           description: go语言技术博主
