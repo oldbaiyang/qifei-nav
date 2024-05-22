@@ -24,6 +24,16 @@
           url: https://www.midjourney.com/home
           description: MidJourney 是一款基于人工智能的图像生成工具，可以通过输入文本描述快速生成高质量的图像。
 
+- taxonomy: 在线工具
+  icon: far fa-star
+  list:
+    - term: 云文档
+      links:
+        - title: 飞书开放平台
+          logo: https://sf3-scmcdn2-cn.feishucdn.com/lark/open/website/share-logo.png
+          url: https://open.feishu.cn/?lang=zh-CN
+          description: 应用敏捷开发，服务高效入驻。飞书开放平台致力于以先进的协同办公理念和产品助力企业成长，帮助企业打造愉悦高效的专属办公平台。
+
 - taxonomy: 自媒体收藏
   icon: fas fa-flask fa-lg
   list:
