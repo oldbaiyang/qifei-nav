@@ -34,6 +34,16 @@
           url: https://open.feishu.cn/?lang=zh-CN
           description: 应用敏捷开发，服务高效入驻。飞书开放平台致力于以先进的协同办公理念和产品助力企业成长，帮助企业打造愉悦高效的专属办公平台。
 
+- taxonomy: 资源
+  icon: far fa-star
+  list:
+    - term: 书籍
+      links:
+        - title: 棋飞找书网
+          logo: https://qifei-blog-1256009448.cos.ap-chengdu.myqcloud.com/qifei-blog/findbook.org.png
+          url: https://findbook.org/
+          description: 书籍下载 -pdf,txt,mobi,azw3,epub 把时间交给阅读
+
 - taxonomy: 自媒体收藏
   icon: fas fa-flask fa-lg
   list:
