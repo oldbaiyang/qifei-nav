@@ -44,6 +44,34 @@
           url: https://findbook.org/
           description: 书籍下载 -pdf,txt,mobi,azw3,epub 把时间交给阅读
 
+- taxonomy: 建站
+  icon: far fa-star
+  list:
+    - term: 建站工具
+      links:
+        - title: 百度统计
+          logo: https://tongji.baidu.com/main/static/media/logo.a99c3448f6aac870cd92b4db79f16fcf.svg
+          url: https://tongji.baidu.com/main/homepage/self/homepage/index
+          description: 百度统计
+        - title: 百度站长平台
+          logo: https://ziyuan.baidu.com/static/ziyuan/image/common/logo_bbb4ad1.png
+          url: https://ziyuan.baidu.com/site/index#/
+          description: 站点页面收录到百度搜索引擎
+        - title: Google Analytics
+          logo: https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg
+          url: https://analytics.google.com/
+          description: 谷歌分析平台
+        - title: Google Search Console
+          logo: https://ssl.gstatic.com/search-console/scfe/sc_logo_lockup_v3.svg
+          url: https://search.google.com/search-console
+          description: 站点收录到谷歌搜索
+        - title: Google AdSense
+          logo: https://businesscherub.com.au/wp-content/uploads/2020/08/what-is-google-adsense.jpg
+          url: https://adsense.google.com/start/
+          description: 谷歌广告平台
+          
+        
+
 - taxonomy: 自媒体收藏
   icon: fas fa-flask fa-lg
   list:
