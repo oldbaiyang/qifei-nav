@@ -72,9 +72,25 @@
           
         
 
-- taxonomy: 自媒体收藏
+- taxonomy: 自媒体
   icon: fas fa-flask fa-lg
   list:
+    - term: 各平台入口
+      links:
+        - title: 头条号
+          logo: https://sms-man.com/cn/blog/wp-content/uploads/2022/06/1da08ebefeb2eecec538ed2ef0ce7a62_icon.png
+          url: https://www.toutiao.com/c/user/token/MS4wLjABAAAAUovJQ4tfvOISpxCSTF1EsEk_8BzvkJD5Ux4l9IBmd64M9rOyIlUBt-L3NlNvODOK/?source=tuwen_detail&log_from=6970218bcd0a7_1716530777873
+          description: 今日头条
+        - title: 公众号
+          logo: https://res.wx.qq.com/a/fed_upload/9300e7ac-cec5-4454-b75c-f92260dd5b47/logo-mp.ico
+          url: https://mp.weixin.qq.com/
+          description: 微信公众号
+        - title: 百家号
+          logo: https://pp.myapp.com/ma_icon/0/icon_52638815_1715220196/256
+          url: https://author.baidu.com/home?context=%7B%22uk%22%3A%223wCUFsmOGUh9KTbpSVIPPQ%22%7D
+          description: 百家号，是百度为创作者打造的集创作、发布、变现于一体的内容创作平台，也是众多企业号实现营销转化的运营新阵地。
+        
+          
     - term: youtub
       links:
         - title: 牛哥
