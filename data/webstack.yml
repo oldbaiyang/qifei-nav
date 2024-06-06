@@ -49,6 +49,13 @@
           logo: https://qifei-blog-1256009448.cos.ap-chengdu.myqcloud.com/qifei-blog/findbook.org.png
           url: https://findbook.org/
           description: 书籍下载 -pdf,txt,mobi,azw3,epub 把时间交给阅读
+    - term: 课程教程
+      links:
+         - title: 吾爱学堂
+           logo: https://www.yuerxuetang.com/wp-content/uploads/2022/05/logo_20220521_uugai.com_1653139032214.png
+           url: https://www.yuerxuetang.com?aff=1081
+           description: 吾爱学堂，致力于个人成长，亲子教育，课外辅导，职场提升，整理全网优质海量资源，每天上新！
+         
 
 - taxonomy: 建站
   icon: far fa-star
