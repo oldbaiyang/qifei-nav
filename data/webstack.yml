@@ -40,6 +40,23 @@
           url: https://doocs.github.io/md/
           description: 一款高度简洁的微信 Markdown 编辑器
 
+- taxonomy: 政府网站
+  icon: far fa-star
+  list:
+    - term: 北京
+      links:
+        - title: 北京公积金
+          logo: https://gjj.beijing.gov.cn/web/uiFramework/commonResource/image/2021102115450834824.png
+          url: https://gjj.beijing.gov.cn/
+          description: 北京住房公积金管理中心
+
+    - term: 天津
+      links:
+        - title: 天津小汽车摇号
+          logo: https://xkctk.jtys.tj.gov.cn/templates/xkctkweb/img/logo-jt.png
+          url: https://xkctk.jtys.tj.gov.cn/
+          description: 天津小汽车摇号
+
 - taxonomy: 资源
   icon: far fa-star
   list:
@@ -55,6 +72,7 @@
            logo: https://www.yuerxuetang.com/wp-content/uploads/2022/05/logo_20220521_uugai.com_1653139032214.png
            url: https://www.yuerxuetang.com?aff=1081
            description: 吾爱学堂，致力于个人成长，亲子教育，课外辅导，职场提升，整理全网优质海量资源，每天上新！
+    
          
 
 - taxonomy: 建站
