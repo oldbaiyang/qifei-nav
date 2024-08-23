@@ -60,6 +60,13 @@
           logo: https://xkctk.jtys.tj.gov.cn/templates/xkctkweb/img/logo-jt.png
           url: https://xkctk.jtys.tj.gov.cn/
           description: 天津小汽车摇号
+    
+    - term: 国家
+      links:
+        - title: 中国高等教育学生信息网（学信网）
+          logo: https://t1.chei.com.cn/chsi/images/chsi-logo-pad2x.png
+          url: https://www.chsi.com.cn/
+          description: 在线验证学位证学历证
 
 - taxonomy: 资源
   icon: far fa-star
