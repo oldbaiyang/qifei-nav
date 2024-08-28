@@ -43,6 +43,10 @@
           logo: https://tinify.cn/images/apple-touch-icon.png
           url: https://tinify.cn/
           description: TinyPNG使用智能有损压缩技术将您的WebP, PNG and JPEG图片的文件大小降低。 
+        - title: I love pdf
+          logo: https://www.ilovepdf.com/img/app-icon.png
+          url: https://www.ilovepdf.com/zh-cn/download/2phkhr12vpgbkpxdrh4fv1blnxfd3Atr8261gjj234mm4qxl3f9h6k7m199k3h8A2Abs5v4lqx7lcA9vg2ks3m56wbAwx6vnpy2436lwx6400Aknrsg22A7l8bkjzt9rvn34pyvwyn0xprrAl1mvvbfgh3nzx1bt2xh27thm8lztA0wtb89q/68
+          description: 合并PDF文件，拆分PDF文件，合并PDF文件，提取PDF文件，压缩PDF文件，转换PDF文件，Word转换为PDF文件，Excel转换为PDF文件，Powerpoint转换为PDF文件，PDF转换为JPG图片，JPG转换为PDF文件
 
 - taxonomy: 政府网站
   icon: far fa-star
