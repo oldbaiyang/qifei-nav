@@ -53,10 +53,14 @@
   list:
     - term: 北京
       links:
+        - title: 北京社保
+          logo: https://fuwu.rsj.beijing.gov.cn/zhrs/yltc/favicon.ico
+          url: https://fuwu.rsj.beijing.gov.cn/zhrs/yltc/yltc-home
+          description: 北京社保      
         - title: 北京公积金
           logo: https://gjj.beijing.gov.cn/web/uiFramework/commonResource/image/2021102115450834824.png
           url: https://gjj.beijing.gov.cn/
-          description: 北京住房公积金管理中心
+          description: 北京公积金
 
     - term: 天津
       links:
