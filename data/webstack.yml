@@ -61,6 +61,10 @@
           logo: https://gjj.beijing.gov.cn/web/uiFramework/commonResource/image/2021102115450834824.png
           url: https://gjj.beijing.gov.cn/
           description: 北京公积金
+        - title: 北京小汽车摇号
+          logo: https://xkczb.jtw.beijing.gov.cn/templates/default/images/favicon.ico
+          url: https://xkczb.jtw.beijing.gov.cn/
+          description: 北京小汽车摇号
 
     - term: 天津
       links:
