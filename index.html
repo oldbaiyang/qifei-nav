@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Nav - 极简书签导航</title>
     <meta name="description" content="一个简洁美观的静态书签导航网站">
-    
+
     <!-- 引入 Tabler Icons (开源免费图标库) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- 侧边栏 -->
@@ -24,7 +28,7 @@
                 <i class="ti ti-rocket"></i>
                 <span>My Nav</span>
             </div>
-            
+
             <nav class="nav-menu" id="nav-menu">
                 <!-- 由 JS 动态生成 -->
             </nav>
@@ -44,22 +48,112 @@
                     <i class="ti ti-search"></i>
                     <input type="text" id="search-input" placeholder="搜索书签...">
                 </div>
-                <div class="theme-toggle">
-                    <!-- 主题切换按钮预留 -->
+                <div class="header-controls">
+                    <button class="btn-icon" id="toggle-admin" title="管理模式">
+                        <i class="ti ti-settings"></i>
+                    </button>
+                    <div id="admin-actions" class="hidden">
+                        <button class="btn-primary" id="btn-add">
+                            <i class="ti ti-plus"></i> 新增
+                        </button>
+                        <button class="btn-secondary" id="btn-export">
+                            <i class="ti ti-download"></i> 导出数据
+                        </button>
+                    </div>
                 </div>
             </header>
 
             <div class="content-wrapper" id="content-wrapper">
                 <!-- 由 JS 动态生成 -->
             </div>
-            
+
             <footer class="page-footer">
                 <p>&copy; 2025 My Nav. Built with ❤️.</p>
             </footer>
         </main>
     </div>
 
+    <!-- 编辑/新增 弹窗 -->
+    <div class="modal-overlay hidden" id="item-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">添加书签</h3>
+                <button class="btn-close" id="modal-close"><i class="ti ti-x"></i></button>
+            </div>
+            <form id="item-form" class="modal-body">
+                <input type="hidden" id="item-id">
+                <div class="form-group">
+                    <label>标题</label>
+                    <input type="text" id="input-title" required placeholder="例如：GitHub">
+                </div>
+                <div class="form-group">
+                    <label>网址 (URL)</label>
+                    <input type="url" id="input-url" required placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>描述</label>
+                    <input type="text" id="input-desc" placeholder="简短描述...">
+                </div>
+                <div class="form-group">
+                    <label>Logo (可选)</label>
+                    <input type="text" id="input-logo" placeholder="图片地址，留空自动获取">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>一级分类</label>
+                        <select id="input-category" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label>二级分类</label>
+                        <input type="text" id="input-subcategory" list="subcategory-list" required
+                            placeholder="选择或输入新分类">
+                        <datalist id="subcategory-list"></datalist>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-text" id="modal-cancel">取消</button>
+                    <button type="submit" class="btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 分类管理 弹窗 -->
+    <div class="modal-overlay hidden" id="category-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="cat-modal-title">管理分类</h3>
+                <button class="btn-close" id="cat-modal-close"><i class="ti ti-x"></i></button>
+            </div>
+            <form id="cat-form" class="modal-body">
+                <input type="hidden" id="cat-id">
+                <input type="hidden" id="cat-level"> <!-- 1 or 2 -->
+                <input type="hidden" id="cat-parent-id"> <!-- for level 2 -->
+
+                <div class="form-group">
+                    <label>分类名称</label>
+                    <input type="text" id="cat-input-name" required placeholder="例如：开发工具">
+                </div>
+
+                <div class="form-group" id="cat-icon-group">
+                    <label>图标 Class (仅一级分类)</label>
+                    <input type="text" id="cat-input-icon" placeholder="例如：ti ti-code">
+                    <small style="color:var(--text-secondary);display:block;margin-top:0.25rem;">
+                        支持 <a href="https://tabler-icons.io/" target="_blank" style="text-decoration:underline;">Tabler
+                            Icons</a>
+                    </small>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-text" id="cat-modal-cancel">取消</button>
+                    <button type="submit" class="btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
