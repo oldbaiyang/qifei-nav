@@ -441,6 +441,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(err => alert('复制失败'));
     });
 
+    // Reset Data
+    document.getElementById('btn-reset').addEventListener('click', () => {
+        if (confirm('确定要重置数据吗？\n这将清空浏览器本地缓存，并重新加载 data.js 中的默认数据。\n未导出的修改将丢失！')) {
+            localStorage.removeItem('myNavData');
+            location.reload();
+        }
+    });
+
     // --- Item Modal ---
     function openItemModal() {
         populateCategorySelect();
