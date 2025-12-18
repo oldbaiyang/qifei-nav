@@ -94,16 +94,14 @@ try {
     let htmlContent = fs.readFileSync(indexPath, 'utf8');
 
     // Replace Sidebar
-    // Regex matches content inside <nav id="nav-menu">...</nav>
     htmlContent = htmlContent.replace(
-        /(<nav class="nav-menu" id="nav-menu">)([\s\S]*?)(<\/nav>)/,
+        /(<!-- SIDEBAR_START -->)([\s\S]*?)(<!-- SIDEBAR_END -->)/,
         `$1\n${sidebarHTML}\n$3`
     );
 
     // Replace Content
-    // Regex matches content inside <div class="content-wrapper" id="content-wrapper">...</div>
     htmlContent = htmlContent.replace(
-        /(<div class="content-wrapper" id="content-wrapper">)([\s\S]*?)(<\/div>)/,
+        /(<!-- CONTENT_START -->)([\s\S]*?)(<!-- CONTENT_END -->)/,
         `$1\n${contentHTML}\n$3`
     );
 
