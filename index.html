@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Nav - 极简书签导航</title>
-    <meta name="description" content="一个简洁美观的静态书签导航网站">
+    <meta name="description" content="一个简洁美观的静态书签导航网站，收录各类常用工具、学习资源与设计灵感。">
+    <meta name="keywords" content="导航, 书签, 静态网站, 极简, 效率工具, 编程, 设计">
+    <meta name="author" content="My Nav">
+    <meta property="og:title" content="My Nav - 极简书签导航">
+    <meta property="og:description" content="一个简洁美观的静态书签导航网站，收录各类常用工具、学习资源与设计灵感。">
+    <meta property="og:type" content="website">
 
     <!-- 引入 Tabler Icons (开源免费图标库) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -30,8 +35,26 @@
             </div>
 
             <nav class="nav-menu" id="nav-menu">
-                <!-- 由 JS 动态生成 -->
-            </nav>
+
+            <div data-id=""> <!-- Static wrapper -->
+                <a href="#" class="nav-item active" data-id="">
+                     <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:0;">
+                        <i class="ti ti-star"></i>
+                        <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">好数科技</span>
+                    </div>
+                </a>
+            </div>
+
+            <div data-id=""> <!-- Static wrapper -->
+                <a href="#" class="nav-item " data-id="">
+                     <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:0;">
+                        <i class="ti ti-folder"></i>
+                        <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">常用</span>
+                    </div>
+                </a>
+            </div>
+
+</nav>
 
             <div class="sidebar-footer">
                 <a href="https://github.com/oldbaiyang/qifei-nav" target="_blank" class="footer-link">
@@ -59,13 +82,126 @@
                         <button class="btn-secondary" id="btn-export">
                             <i class="ti ti-download"></i> 导出数据
                         </button>
+                        <button class="btn-secondary" id="btn-reset" title="重置为默认数据 (清空本地缓存)">
+                            <i class="ti ti-refresh"></i> 重置数据
+                        </button>
                     </div>
                 </div>
             </header>
 
             <div class="content-wrapper" id="content-wrapper">
-                <!-- 由 JS 动态生成 -->
-            </div>
+
+        <section class="category-section" id="">
+            <h2 class="category-title">
+                <i class="ti ti-star"></i> 好数科技
+            </h2>
+            
+                <div class="sub-category">
+                    <div class="subcategory-header">
+                         <h3 class="sub-category-title">平台</h3>
+                    </div>
+                    <div class="card-grid">
+                        
+            <a href="https://onesim.xinshengcmiot.cn:18091/login" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=onesim.xinshengcmiot.cn&sz=64" alt="芯昇空写卡平台" onerror="this.onerror=null;this.parentNode.innerHTML='芯'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">芯昇空写卡平台</div>
+                    <div class="card-desc">芯昇空写卡平台</div>
+                </div>
+            </a>
+    
+            <a href="https://ecard.e-car.cn/tree-admin/#/multi/multi-manage" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=ecard.e-car.cn&sz=64" alt="（三网卡）广东翼卡车联网" onerror="this.onerror=null;this.parentNode.innerHTML='（'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">（三网卡）广东翼卡车联网</div>
+                    <div class="card-desc">（三网卡）广东翼卡车联网</div>
+                </div>
+            </a>
+    
+            <a href="https://ucenter.miit.gov.cn/login.jsp?toUrl=https%3A%2F%2Fdxyw.miit.gov.cn%2Fdxxzsp%2Fhorizon%2Fbasics%2FgetBasics.wf" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=ucenter.miit.gov.cn&sz=64" alt="电信业务经营许可申请" onerror="this.onerror=null;this.parentNode.innerHTML='电'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">电信业务经营许可申请</div>
+                    <div class="card-desc">电信业务经营许可申请</div>
+                </div>
+            </a>
+    
+                    </div>
+                </div>
+            
+                <div class="sub-category">
+                    <div class="subcategory-header">
+                         <h3 class="sub-category-title">文档</h3>
+                    </div>
+                    <div class="card-grid">
+                        
+            <a href="https://alidocs.dingtalk.com/spreadsheetv2/RjvwK47oxtZE3wJQ/edit?docKey=4j6OJ5j4MmYKgq3p&dentryKey=RjvwK47oxtZE3wJQ&type=s&onlineEdit=true&ext=xlsx&mainsiteOrigin=mainsite" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=alidocs.dingtalk.com&sz=64" alt="任务跟进" onerror="this.onerror=null;this.parentNode.innerHTML='任'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">任务跟进</div>
+                    <div class="card-desc">项目任务进度跟踪表格</div>
+                </div>
+            </a>
+    
+                    </div>
+                </div>
+            
+        </section>
+
+        <section class="category-section" id="">
+            <h2 class="category-title">
+                <i class="ti ti-folder"></i> 常用
+            </h2>
+            
+                <div class="sub-category">
+                    <div class="subcategory-header">
+                         <h3 class="sub-category-title">文档</h3>
+                    </div>
+                    <div class="card-grid">
+                        
+            <a href="https://drive.google.com/drive/u/2/home" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=drive.google.com&sz=64" alt="google云盘" onerror="this.onerror=null;this.parentNode.innerHTML='g'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">google云盘</div>
+                    <div class="card-desc">Google Drive 云端硬盘</div>
+                </div>
+            </a>
+    
+                    </div>
+                </div>
+            
+                <div class="sub-category">
+                    <div class="subcategory-header">
+                         <h3 class="sub-category-title">AI工具</h3>
+                    </div>
+                    <div class="card-grid">
+                        
+            <a href="https://notebooklm.google.com/" target="_blank" class="card">
+                <div class="card-logo">
+                    <img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64" alt="Notebook LM" onerror="this.onerror=null;this.parentNode.innerHTML='N'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Notebook LM</div>
+                    <div class="card-desc">Google 推出的 AI 笔记助手</div>
+                </div>
+            </a>
+    
+                    </div>
+                </div>
+            
+        </section>
+
+</div>
 
             <footer class="page-footer">
                 <p>&copy; 2025 My Nav. Built with ❤️.</p>
