@@ -32,8 +32,8 @@ const navData = [
           {
             "title": "任务跟进",
             "url": "https://alidocs.dingtalk.com/spreadsheetv2/RjvwK47oxtZE3wJQ/edit?docKey=4j6OJ5j4MmYKgq3p&dentryKey=RjvwK47oxtZE3wJQ&type=s&onlineEdit=true&ext=xlsx&mainsiteOrigin=mainsite",
-            "desc": "",
-            "logo": ""
+            "desc": "项目任务进度跟踪表格",
+            "logo": "https://www.google.com/s2/favicons?domain=alidocs.dingtalk.com&sz=64"
           }
         ]
       }
@@ -49,8 +49,19 @@ const navData = [
           {
             "title": "google云盘",
             "url": "https://drive.google.com/drive/u/2/home",
-            "desc": "",
-            "logo": ""
+            "desc": "Google Drive 云端硬盘",
+            "logo": "https://www.google.com/s2/favicons?domain=drive.google.com&sz=64"
+          }
+        ]
+      },
+      {
+        "name": "AI工具",
+        "items": [
+          {
+            "title": "Notebook LM",
+            "url": "https://notebooklm.google.com/",
+            "desc": "Google 推出的 AI 笔记助手",
+            "logo": "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64"
           }
         ]
       }
