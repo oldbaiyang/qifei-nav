@@ -580,6 +580,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* === Search === */
+    searchInput.addEventListener('input', (e) => {
+        const keyword = e.target.value.toLowerCase().trim();
+        if (!keyword) {
+            renderMain();
+            return;
+        }
+
+        const filtered = appData.map(cat => {
+            const subs = cat.items.map(sub => ({
+                ...sub,
+                items: sub.items.filter(i =>
+                    i.title.toLowerCase().includes(keyword) ||
+                    (i.desc && i.desc.toLowerCase().includes(keyword)) ||
+                    i.url.toLowerCase().includes(keyword)
+                )
+            })).filter(s => s.items.length > 0);
+            return { ...cat, items: subs };
+        }).filter(c => c.items.length > 0);
+
+        renderMain(filtered);
+    });
+
     // Start
     init();
 });
