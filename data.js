@@ -44,13 +44,31 @@ const navData = [
     "icon": "ti ti-folder",
     "items": [
       {
-        "name": "文档",
+        "name": "网盘",
         "items": [
           {
             "title": "google云盘",
             "url": "https://drive.google.com/drive/u/2/home",
             "desc": "Google Drive 云端硬盘",
             "logo": "https://www.google.com/s2/favicons?domain=drive.google.com&sz=64"
+          },
+          {
+            "title": "百度网盘",
+            "url": "https://pan.baidu.com/",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "115网盘",
+            "url": "https://115.com/",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "夸克网盘",
+            "url": "https://pan.quark.cn/",
+            "desc": "",
+            "logo": ""
           }
         ]
       },
@@ -62,6 +80,35 @@ const navData = [
             "url": "https://notebooklm.google.com/",
             "desc": "Google 推出的 AI 笔记助手",
             "logo": "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64"
+          },
+          {
+            "title": "Gemini",
+            "url": "https://gemini.google.com/app",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "娱乐",
+    "icon": "ti ti-folder",
+    "items": [
+      {
+        "name": "影视下载",
+        "items": [
+          {
+            "title": "6v电影",
+            "url": "https://www.hao6v.cc",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "音范丝",
+            "url": "https://www.yinfans.me/",
+            "desc": "",
+            "logo": ""
           }
         ]
       }
