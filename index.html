@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Nav - 极简书签导航</title>
+    <meta name="description" content="一个简洁美观的静态书签导航网站">
+    
+    <!-- 引入 Tabler Icons (开源免费图标库) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ti ti-rocket"></i>
+                <span>My Nav</span>
+            </div>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <!-- 由 JS 动态生成 -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://github.com/oldbaiyang/qifei-nav" target="_blank" class="footer-link">
+                    <i class="ti ti-brand-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ti ti-search"></i>
+                    <input type="text" id="search-input" placeholder="搜索书签...">
+                </div>
+                <div class="theme-toggle">
+                    <!-- 主题切换按钮预留 -->
+                </div>
+            </header>
+
+            <div class="content-wrapper" id="content-wrapper">
+                <!-- 由 JS 动态生成 -->
+            </div>
+            
+            <footer class="page-footer">
+                <p>&copy; 2025 My Nav. Built with ❤️.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
