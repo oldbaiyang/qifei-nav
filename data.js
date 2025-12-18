@@ -4,7 +4,7 @@ const navData = [
     "icon": "ti ti-star",
     "items": [
       {
-        "name": "常用平台",
+        "name": "平台",
         "items": [
           {
             "title": "芯昇空写卡平台",
@@ -22,6 +22,17 @@ const navData = [
             "title": "电信业务经营许可申请",
             "desc": "电信业务经营许可申请",
             "url": "https://ucenter.miit.gov.cn/login.jsp?toUrl=https%3A%2F%2Fdxyw.miit.gov.cn%2Fdxxzsp%2Fhorizon%2Fbasics%2FgetBasics.wf",
+            "logo": ""
+          }
+        ]
+      },
+      {
+        "name": "文档",
+        "items": [
+          {
+            "title": "任务跟进",
+            "url": "https://alidocs.dingtalk.com/spreadsheetv2/RjvwK47oxtZE3wJQ/edit?docKey=4j6OJ5j4MmYKgq3p&dentryKey=RjvwK47oxtZE3wJQ&type=s&onlineEdit=true&ext=xlsx&mainsiteOrigin=mainsite",
+            "desc": "",
             "logo": ""
           }
         ]
