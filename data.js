@@ -23,6 +23,12 @@ const navData = [
             "desc": "电信业务经营许可申请",
             "url": "https://ucenter.miit.gov.cn/login.jsp?toUrl=https%3A%2F%2Fdxyw.miit.gov.cn%2Fdxxzsp%2Fhorizon%2Fbasics%2FgetBasics.wf",
             "logo": ""
+          },
+          {
+            "title": "销帮帮CRM",
+            "url": "https://pfweb.xbongbong.com/#/app/home",
+            "desc": "",
+            "logo": ""
           }
         ]
       },

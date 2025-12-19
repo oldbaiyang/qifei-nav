@@ -466,18 +466,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateCategorySelect() {
         inputCategory.innerHTML = appData.map(c => `<option value="${c.id}">${c.category}</option>`).join('');
         if (appData.length > 0) populateSubCategoryList(appData[0].id);
-        inputCategory.onchange = (e) => populateSubCategoryList(e.target.value);
+        inputCategory.onchange = (e) => {
+            populateSubCategoryList(e.target.value);
+            inputSubCategory.value = ''; // Clear subcategory input on change
+        };
     }
 
     function populateSubCategoryList(catId) {
         const cat = appData.find(c => c.id === catId);
-        subCategoryList.innerHTML = '';
-        if (cat) {
-            cat.items.forEach(sub => {
-                const opt = document.createElement('option');
-                opt.value = sub.name;
-                subCategoryList.appendChild(opt);
-            });
+        subCategoryList.innerHTML = ''; // Clear existing options
+
+        if (cat && cat.items) {
+            // console.log(`Populating subcategories for ${cat.category}:`, cat.items.map(s => s.name));
+            subCategoryList.innerHTML = cat.items.map(sub => `<option value="${sub.name}"></option>`).join('');
         }
     }
 
