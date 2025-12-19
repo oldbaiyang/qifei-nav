@@ -40,6 +40,12 @@ const navData = [
             "url": "https://alidocs.dingtalk.com/spreadsheetv2/RjvwK47oxtZE3wJQ/edit?docKey=4j6OJ5j4MmYKgq3p&dentryKey=RjvwK47oxtZE3wJQ&type=s&onlineEdit=true&ext=xlsx&mainsiteOrigin=mainsite",
             "desc": "项目任务进度跟踪表格",
             "logo": "https://www.google.com/s2/favicons?domain=alidocs.dingtalk.com&sz=64"
+          },
+          {
+            "title": "采购订单",
+            "url": "https://alidocs.dingtalk.com/i/nodes/mExel2BLV5oyw1BziLe4wYAx8gk9rpMq?utm_scene=person_space",
+            "desc": "",
+            "logo": ""
           }
         ]
       }
