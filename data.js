@@ -54,6 +54,17 @@ const navData = [
             "logo": ""
           }
         ]
+      },
+      {
+        "name": "AI工具",
+        "items": [
+          {
+            "title": "Notebook LM",
+            "url": "https://notebooklm.google.com/?authuser=2&pageId=none",
+            "desc": "Google 推出的 AI 笔记助手",
+            "logo": "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64"
+          }
+        ]
       }
     ]
   },
@@ -93,12 +104,6 @@ const navData = [
       {
         "name": "AI工具",
         "items": [
-          {
-            "title": "Notebook LM",
-            "url": "https://notebooklm.google.com/",
-            "desc": "Google 推出的 AI 笔记助手",
-            "logo": "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64"
-          },
           {
             "title": "Gemini",
             "url": "https://gemini.google.com/app",
