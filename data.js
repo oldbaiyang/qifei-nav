@@ -46,6 +46,12 @@ const navData = [
             "url": "https://alidocs.dingtalk.com/i/nodes/mExel2BLV5oyw1BziLe4wYAx8gk9rpMq?utm_scene=person_space",
             "desc": "",
             "logo": ""
+          },
+          {
+            "title": "Notebook LM-好数科技",
+            "url": "https://notebooklm.google.com/notebook/7878639b-e0af-4459-93c3-1a6e5a41930e?authuser=2",
+            "desc": "",
+            "logo": ""
           }
         ]
       }
@@ -119,6 +125,23 @@ const navData = [
           {
             "title": "音范丝",
             "url": "https://www.yinfans.me/",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "折腾",
+    "icon": "ti ti-folder",
+    "items": [
+      {
+        "name": "内网服务",
+        "items": [
+          {
+            "title": "n8n",
+            "url": "http://192.168.3.3:5678/",
             "desc": "",
             "logo": ""
           }
