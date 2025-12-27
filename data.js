@@ -43,7 +43,7 @@ const navData = [
           },
           {
             "title": "采购订单",
-            "url": "https://alidocs.dingtalk.com/i/nodes/mExel2BLV5oyw1BziLe4wYAx8gk9rpMq?utm_scene=person_space",
+            "url": "https://docs.google.com/spreadsheets/d/1Xt_YtjAXARFO2PaqKy0ynxllnjFG6KK9aGYVp-xDT9k/edit?gid=0#gid=0",
             "desc": "",
             "logo": ""
           },
