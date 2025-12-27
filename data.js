@@ -37,9 +37,9 @@ const navData = [
         "items": [
           {
             "title": "任务跟进",
-            "url": "https://alidocs.dingtalk.com/spreadsheetv2/RjvwK47oxtZE3wJQ/edit?docKey=4j6OJ5j4MmYKgq3p&dentryKey=RjvwK47oxtZE3wJQ&type=s&onlineEdit=true&ext=xlsx&mainsiteOrigin=mainsite",
+            "url": "https://docs.google.com/spreadsheets/d/1TxRb-1SMNWxY-DpUiDtoZysXfpQCf1M_wliQBHPPHJo/edit",
             "desc": "项目任务进度跟踪表格",
-            "logo": "https://www.google.com/s2/favicons?domain=alidocs.dingtalk.com&sz=64"
+            "logo": ""
           },
           {
             "title": "采购订单",
@@ -52,17 +52,6 @@ const navData = [
             "url": "https://notebooklm.google.com/notebook/7878639b-e0af-4459-93c3-1a6e5a41930e?authuser=2",
             "desc": "",
             "logo": ""
-          }
-        ]
-      },
-      {
-        "name": "AI工具",
-        "items": [
-          {
-            "title": "Notebook LM",
-            "url": "https://notebooklm.google.com/?authuser=2&pageId=none",
-            "desc": "Google 推出的 AI 笔记助手",
-            "logo": "https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64"
           }
         ]
       }
@@ -104,6 +93,12 @@ const navData = [
       {
         "name": "AI工具",
         "items": [
+          {
+            "title": "Notebook LM",
+            "url": "https://notebooklm.google.com/",
+            "desc": "Google 推出的 AI 笔记助手",
+            "logo": "https://notebooklm.google.com/?authuser=2&pageId=none"
+          },
           {
             "title": "Gemini",
             "url": "https://gemini.google.com/app",
@@ -147,6 +142,17 @@ const navData = [
           {
             "title": "n8n",
             "url": "http://192.168.3.3:5678/",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      },
+      {
+        "name": "VPS",
+        "items": [
+          {
+            "title": "Google Cloud",
+            "url": "https://console.cloud.google.com/welcome?project=richard-vps",
             "desc": "",
             "logo": ""
           }
