@@ -159,5 +159,22 @@ const navData = [
         ]
       }
     ]
+  },
+  {
+    "category": "学习",
+    "icon": "ti ti-folder",
+    "items": [
+      {
+        "name": "1",
+        "items": [
+          {
+            "title": "【寒】厚少二下22452 日8:20四晚6:30集8",
+            "url": "https://ai.feishu.cn/sheets/UzdBssiehhOAVHt1VZocyRTEnUf",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      }
+    ]
   }
 ];
