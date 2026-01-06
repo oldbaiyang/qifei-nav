@@ -52,6 +52,12 @@ const navData = [
             "url": "https://notebooklm.google.com/notebook/7878639b-e0af-4459-93c3-1a6e5a41930e?authuser=2",
             "desc": "",
             "logo": ""
+          },
+          {
+            "title": "好数_谷歌云盘",
+            "url": "https://drive.google.com/drive/u/2/folders/1lZuCU71ZHtz3FhIFQckdI61BxwqOVvhr",
+            "desc": "",
+            "logo": ""
           }
         ]
       }
@@ -103,6 +109,17 @@ const navData = [
             "title": "Gemini",
             "url": "https://gemini.google.com/app",
             "desc": "",
+            "logo": ""
+          }
+        ]
+      },
+      {
+        "name": "软件下载",
+        "items": [
+          {
+            "title": "macapp",
+            "url": "https://www.macapp.org/",
+            "desc": "Mac软件下载",
             "logo": ""
           }
         ]
