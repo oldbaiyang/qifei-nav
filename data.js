@@ -29,6 +29,24 @@ const navData = [
             "url": "https://pfweb.xbongbong.com/#/app/home",
             "desc": "",
             "logo": ""
+          },
+          {
+            "title": "onelink",
+            "url": "https://ec.iot.10086.cn/",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "好数云",
+            "url": "https://wellnkiot.com/core-link/customer",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "博元平台",
+            "url": "https://www.multi-byte.io/auth/login?returnUrl=%2Fsystem%2Frolelist",
+            "desc": "",
+            "logo": ""
           }
         ]
       },
