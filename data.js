@@ -76,6 +76,24 @@ const navData = [
             "url": "https://drive.google.com/drive/u/2/folders/1lZuCU71ZHtz3FhIFQckdI61BxwqOVvhr",
             "desc": "",
             "logo": ""
+          },
+          {
+            "title": "库存管理",
+            "url": "https://alidocs.dingtalk.com/i/nodes/Obva6QBXJw062yqai6bM5kap8n4qY5Pr?utm_scene=person_space",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "业务办理跟踪单",
+            "url": "https://alidocs.dingtalk.com/i/nodes/ZX6GRezwJlNyrBqAs6X15rNKWdqbropQ?cid=6244599%3A2377157624&utm_source=im&utm_scene=team_space&iframeQuery=utm_medium%253Dim_card%2526utm_source%253Dim&utm_medium=im_card&corpId=dingc6518f12ff17c74035c2f4657eb6378f",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "业务办理列表+说明文档",
+            "url": "https://alidocs.dingtalk.com/i/nodes/KGZLxjv9VGjdg2BqixMnM6a5W6EDybno?cid=6244599%3A2377157624&utm_source=im&utm_scene=team_space&iframeQuery=utm_medium%253Dim_card%2526utm_source%253Dim&utm_medium=im_card&corpId=dingc6518f12ff17c74035c2f4657eb6378f",
+            "desc": "",
+            "logo": ""
           }
         ]
       }
