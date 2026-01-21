@@ -96,6 +96,21 @@ const navData = [
             "logo": ""
           }
         ]
+      },
+      {
+        "name": "产品定义",
+        "items": [
+          {
+            "title": "多APN产品定义",
+            "url": "https://alidocs.dingtalk.com/i/nodes/XPwkYGxZV3wyOYBZTg90N4nwVAgozOKL?cid=6244599%3A159339021&utm_source=im&utm_scene=team_space&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_medium=im_card&corpId=dingc6518f12ff17c74035c2f4657eb6378f",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      },
+      {
+        "name": "产品管理",
+        "items": []
       }
     ]
   },
