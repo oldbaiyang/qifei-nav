@@ -110,7 +110,14 @@ const navData = [
       },
       {
         "name": "产品管理",
-        "items": []
+        "items": [
+          {
+            "title": "多APN产品管理手册",
+            "url": "https://alidocs.dingtalk.com/i/nodes/o14dA3GK8g9zd0xjhk2M2vjBV9ekBD76?rnd=0.24015457243835248",
+            "desc": "",
+            "logo": ""
+          }
+        ]
       }
     ]
   },
@@ -221,6 +228,23 @@ const navData = [
           {
             "title": "Google Cloud",
             "url": "https://console.cloud.google.com/welcome?project=richard-vps",
+            "desc": "",
+            "logo": ""
+          }
+        ]
+      },
+      {
+        "name": "建站",
+        "items": [
+          {
+            "title": "google analytics",
+            "url": "https://developers.google.com/analytics?hl=zh-cn",
+            "desc": "",
+            "logo": ""
+          },
+          {
+            "title": "google search console",
+            "url": "https://search.google.com/search-console/about",
             "desc": "",
             "logo": ""
           }
