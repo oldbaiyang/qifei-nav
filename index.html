@@ -12,7 +12,7 @@
     <meta property="og:description" content="一个简洁美观的静态书签导航网站，收录各类常用工具、学习资源与设计灵感。">
     <meta property="og:type" content="website">
 
-    <!-- 引入 Tabler Icons (开源免费图标库) -->
+    <!-- 引入 Tabler Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
     <!-- Google Fonts -->
@@ -92,7 +92,8 @@
                     <input type="text" id="search-input" placeholder="搜索书签...">
                 </div>
                 <div class="header-controls">
-                    <button class="btn-icon" id="toggle-admin" title="管理模式">
+                    <span id="user-info" class="hidden" style="font-size:0.875rem; color:var(--text-secondary);"></span>
+                    <button class="btn-icon" id="toggle-admin" title="管理设置">
                         <i class="ti ti-settings"></i>
                     </button>
                     <div id="admin-actions" class="hidden">
@@ -363,6 +364,30 @@
         </main>
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal-overlay hidden" id="login-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="login-modal-title">管理员登录</h3>
+                <button class="btn-close" id="login-modal-close"><i class="ti ti-x"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" id="login-email" placeholder="admin@example.com">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" id="login-password" placeholder="••••••••">
+                </div>
+                <div id="login-error" class="error-msg hidden" style="color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;">登录失败</div>
+            </div>
+            <div class="modal-footer">
+                <button id="login-btn-submit" class="btn-primary">登录</button>
+            </div>
+        </div>
+    </div>
+
     <!-- 编辑/新增 弹窗 -->
     <div class="modal-overlay hidden" id="item-modal">
         <div class="modal">
@@ -442,6 +467,8 @@
         </div>
     </div>
 
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

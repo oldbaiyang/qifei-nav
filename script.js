@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let editingItemId = null; // null represents adding mode
     let editingCategoryId = null; // for category modal
 
+    /* Supabase & Auth State */
+    let supabaseClient = null; // Renamed from supabase to avoid shadowing
+    let currentUser = null;
+    const DB_TABLE = 'app_config';
+    const DB_KEY = 'nav_data';
+
     /* DOM elements */
     const navMenu = document.getElementById('nav-menu');
     const contentWrapper = document.getElementById('content-wrapper');
@@ -47,28 +53,176 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputSubCategory = document.getElementById('input-subcategory');
     const subCategoryList = document.getElementById('subcategory-list');
 
+    // Login Modal Elements
+    const loginModal = document.getElementById('login-modal');
+    const loginEmail = document.getElementById('login-email');
+    const loginPass = document.getElementById('login-password');
+    const loginBtn = document.getElementById('login-btn-submit');
+    const loginError = document.getElementById('login-error');
+    const loginClose = document.getElementById('login-modal-close');
+    const userInfoDisplay = document.getElementById('user-info');
+
     /* === Initialization === */
 
-    function init() {
-        // 1. Load Data
-        const localData = localStorage.getItem('myNavData');
-        if (localData) {
-            appData = JSON.parse(localData);
+    async function init() {
+        // 1. Init Supabase
+        // Access global 'supabase' object from CDN
+        // Note: The global object is window.supabase.
+        if (typeof window.supabase !== 'undefined' && window.supabase.createClient) {
+             try {
+                supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+            } catch (e) {
+                console.error('Supabase init error:', e);
+            }
         } else {
-            appData = JSON.parse(JSON.stringify(navData));
+            console.error('Supabase global object not found. Script might not be loaded.');
         }
 
-        // 2. Normalize and Assign IDs
+        // 2. Check Auth Session
+        if (supabaseClient) {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                currentUser = session.user;
+                updateUserUI();
+            }
+            
+            // Listen for auth changes
+            supabaseClient.auth.onAuthStateChange((_event, session) => {
+                currentUser = session?.user || null;
+                updateUserUI();
+            });
+        }
+
+        // 3. Load Data (Remote First, then Local)
+        await loadData();
+
+        // 4. Normalize
         normalizeData();
 
-        // 3. Set initial category
+        // 5. Initial Category
         if (appData.length > 0) {
             currentCategory = appData[0];
         }
 
-        // 4. Initial Render
+        // 6. Render
         renderSidebar();
         renderMain();
+    }
+    
+    async function loadData() {
+        let loaded = false;
+        
+        // Try loading from Supabase
+        if (supabaseClient) {
+            try {
+                const { data, error } = await supabaseClient
+                    .from(DB_TABLE)
+                    .select('value')
+                    .eq('key', DB_KEY)
+                    .single();
+                
+                if (data && data.value) {
+                    appData = data.value;
+                    localStorage.setItem('myNavData', JSON.stringify(appData));
+                    loaded = true;
+                    console.log('Loaded data from Supabase');
+                }
+            } catch (err) {
+                console.warn('Failed to load from Supabase:', err);
+            }
+        }
+
+        // Fallback to LocalStorage
+        if (!loaded) {
+            const localData = localStorage.getItem('myNavData');
+            if (localData) {
+                appData = JSON.parse(localData);
+                // loaded = true; // Comment out this to allow fallback to data.js if local data is empty or user wants to reset
+                 // Actually, if localData exists but is empty array, we might want to load default data.
+                 if (appData.length > 0) loaded = true;
+                console.log('Loaded data from LocalStorage');
+            }
+        }
+
+        // Fallback to static data.js
+        if (!loaded) {
+            appData = JSON.parse(JSON.stringify(navData));
+            console.log('Loaded data from static data.js');
+        }
+    }
+
+    function updateUserUI() {
+        if (currentUser) {
+            userInfoDisplay.innerHTML = `${currentUser.email} <a href="#" id="logout-link" style="margin-left:8px;color:var(--primary-color);">退出</a>`;
+            userInfoDisplay.classList.remove('hidden');
+            
+            // Auto enable admin mode on login
+            if (!adminMode) {
+                 adminMode = true;
+                 toggleAdminModeUI();
+            }
+
+            // Bind logout
+            document.getElementById('logout-link').onclick = (e) => {
+                e.preventDefault();
+                handleLogout();
+            };
+        } else {
+            userInfoDisplay.classList.add('hidden');
+            if (adminMode) {
+                adminMode = false;
+                toggleAdminModeUI();
+            }
+        }
+    }
+
+    async function handleLogin() {
+        const email = loginEmail.value;
+        const password = loginPass.value;
+        
+        if (!email || !password) return;
+        
+        loginBtn.disabled = true;
+        loginBtn.textContent = '登录中...';
+        loginError.classList.add('hidden');
+
+        try {
+            if (!supabaseClient) throw new Error('Supabase client not initialized');
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email,
+                password
+            });
+            
+            if (error) throw error;
+            
+            // Success
+            loginModal.classList.add('hidden');
+            loginPass.value = '';
+            
+            // Reload data to ensure we have latest version for editing
+            await loadData();
+            normalizeData(); // Re-normalize after reload
+            renderSidebar();
+            renderMain();
+            
+            // Auto enable admin mode
+            adminMode = true;
+            toggleAdminModeUI();
+
+        } catch (err) {
+            console.error(err);
+            loginError.textContent = '登录失败: ' + err.message;
+            loginError.classList.remove('hidden');
+        } finally {
+            loginBtn.disabled = false;
+            loginBtn.textContent = '登录';
+        }
+    }
+
+    async function handleLogout() {
+        if (supabaseClient) await supabaseClient.auth.signOut();
+        // UI updates automatically via onAuthStateChange
     }
 
     function normalizeData() {
@@ -89,10 +243,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return Math.random().toString(36).substr(2, 9);
     }
 
-    function saveData() {
+    async function saveData() {
         localStorage.setItem('myNavData', JSON.stringify(appData));
         renderSidebar(); // Sidebar updates often affect main content too
         renderMain();
+
+        // Save Remote if logged in
+        if (currentUser && supabaseClient) {
+             const btnText = btnAdd.innerHTML; // Hacky way to show status? No, better use console or unobtrusive notification
+             console.log('Syncing to Supabase...');
+             try {
+                // Use upsert instead of update to handle case where record doesn't exist yet
+                const { error } = await supabaseClient
+                    .from(DB_TABLE)
+                    .upsert({ key: DB_KEY, value: appData }, { onConflict: 'key' });
+                
+                if (error) throw error;
+                console.log('Saved to Supabase successfully');
+                alert('保存成功！数据已同步到 Supabase 云端。');
+            } catch (err) {
+                console.error('Failed to save to Supabase:', err);
+                let msg = err.message;
+                if (msg === 'Failed to fetch') {
+                    msg = '网络请求失败 (Failed to fetch)。\n请检查：\n1. 网络连接是否正常\n2. 是否需要开启代理 (Supabase 在国内可能不稳定)\n3. 数据库表 app_config 是否已创建';
+                }
+                alert('保存到云端失败，仅保存到本地。\n' + msg);
+            }
+        }
     }
 
     /* === Rendering === */
@@ -411,8 +588,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Admin Toggle
     btnToggleAdmin.addEventListener('click', () => {
-        adminMode = !adminMode;
-        if (adminMode) {
+        if (!currentUser) {
+            // Open Login Modal
+            loginModal.classList.remove('hidden');
+        } else {
+            // Toggle Admin Mode
+            adminMode = !adminMode;
+            toggleAdminModeUI();
+        }
+    });
+
+    // Login Modal Listeners
+    if (loginClose) loginClose.onclick = () => loginModal.classList.add('hidden');
+    if (loginBtn) loginBtn.onclick = handleLogin;
+    
+    function toggleAdminModeUI() {
+         if (adminMode) {
             btnToggleAdmin.classList.add('active');
             adminActions.classList.remove('hidden');
             document.body.classList.add('admin-mode');
@@ -423,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderSidebar();
         renderMain();
-    });
+    }
 
     // Export Data
     btnExport.addEventListener('click', () => {
@@ -443,9 +634,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset Data
     document.getElementById('btn-reset').addEventListener('click', () => {
-        if (confirm('确定要重置数据吗？\n这将清空浏览器本地缓存，并重新加载 data.js 中的默认数据。\n未导出的修改将丢失！')) {
-            localStorage.removeItem('myNavData');
-            location.reload();
+        // If logged in, provide option to upload default data
+        if (currentUser) {
+            if (confirm('确定要重置数据吗？\n这将清空浏览器本地缓存，并将云端数据恢复为 data.js 中的初始内容。')) {
+                 appData = JSON.parse(JSON.stringify(navData));
+                 normalizeData();
+                 
+                 // Trigger save manually without full reload first to ensure cloud gets updated
+                 // Then reload to refresh UI
+                 (async () => {
+                    await saveData();
+                    location.reload();
+                 })();
+            }
+        } else {
+             if (confirm('确定要重置数据吗？\n这将清空浏览器本地缓存，并重新加载 data.js 中的默认数据。\n未导出的修改将丢失！')) {
+                localStorage.removeItem('myNavData');
+                location.reload();
+            }
         }
     });
 
